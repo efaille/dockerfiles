@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        DocumentRoot /var/www/html
+
+        <Directory /var/www/html>
+            Options -Indexes +FollowSymLinks +MultiViews
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+        <FilesMatch \.php$>
+            SetHandler "proxy:unix:/var/run/php5-fpm.sock|fcgi://localhost/"
+        </FilesMatch>
+</VirtualHost>
