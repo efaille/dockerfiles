@@ -1,6 +1,8 @@
 FROM efaille/java
 MAINTAINER Erick Faille "efaille@gmail.com"
 
+RUN update-ca-certificates -f
+
 RUN useradd -s /bin/bash -d /minecraft -m minecraft
 RUN chown -R minecraft:minecraft /minecraft
 
