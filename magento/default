@@ -12,12 +12,12 @@ server {
 
     sendfile           on;
     client_max_body_size 100M;
-    
+
     location / {
         try_files $uri $uri/ @handler;
         expires 30d;
     }
-    
+
     location ^~ /app/                { deny all; }
     location ^~ /includes/           { deny all; }
     location ^~ /lib/                { deny all; }
@@ -25,23 +25,18 @@ server {
     location ^~ /pkginfo/            { deny all; }
     location ^~ /report/config.xml   { deny all; }
     location ^~ /var/                { deny all; }
- 
+
     location  /. {
         return 404;
     }
-    
+
     location @handler {
         rewrite / /index.php;
     }
 
     location ~ \.php$ {
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
-
-        fastcgi_pass unix:/var/run/php5-fpm.sock;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_index index.php;
-        include fastcgi_params;
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        fastcgi_read_timeout 300;
     }
-
 }
