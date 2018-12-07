@@ -1,8 +1,8 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER Erick Faille "efaille@gmail.com"
 
 # Update & Install & Clean
-RUN apt-get update && \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     apt-get install -y locales tzdata software-properties-common nano wget curl git && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
