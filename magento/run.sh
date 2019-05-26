@@ -2,6 +2,7 @@
 
 # Install Magento if missing
 if [ ! -f /var/www/app/etc/local.xml ]; then
+  rm -rf /var/www/*
   git clone https://github.com/OpenMage/magento-mirror.git /var/www/
 fi
 

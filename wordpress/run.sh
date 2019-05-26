@@ -2,9 +2,8 @@
 
 # Install WordPress if missing
 if [ ! -f /var/www/wp-config.php ]; then
-  wget https://wordpress.org/latest.tar.gz
-  tar xvzf /latest.tar.gz
-  mv /wordpress/* /var/www/
+  rm -rf /var/www/*
+  curl -sSL https://wordpress.org/latest.tar.gz | tar -xz -C /var/www --strip-components=1
 fi
 
 # Set permissions
