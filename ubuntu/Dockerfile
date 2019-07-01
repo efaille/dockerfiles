@@ -3,7 +3,7 @@ MAINTAINER Erick Faille "efaille@gmail.com"
 
 # Update & Install & Clean
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y locales tzdata software-properties-common nano wget curl git && \
+    apt-get install -y locales tzdata software-properties-common nano wget curl git jq && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set language
