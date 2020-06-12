@@ -1,16 +1,8 @@
 FROM efaille/java
-MAINTAINER Erick Faille "efaille@gmail.com"
 
-RUN update-ca-certificates -f
+COPY init.sh start.sh /
+RUN chmod +x /init.sh /start.sh
 
-RUN useradd -s /bin/bash -d /minecraft -m minecraft
-RUN chown -R minecraft:minecraft /minecraft
+EXPOSE 25565 25575
 
-ADD run.sh /
-RUN chmod 775 /run.sh
-CMD /run.sh
-
-VOLUME /minecraft
-WORKDIR /minecraft
-USER minecraft
-EXPOSE 25565
+ENTRYPOINT /start.sh

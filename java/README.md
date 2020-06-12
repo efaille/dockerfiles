@@ -1,7 +1,7 @@
 # Java
 
 ### Dependencie
-* [efaille/ubuntu]
+* [efaille/alpine]
 
 ### Usage
 ```
@@ -10,4 +10,4 @@ $ docker run efaille/java java -version
 ```
 $ docker run -v $PWD:/data efaille/java java -jar helloworld.jar
 ```
-[efaille/ubuntu]://github.com/efaille/dockerfiles/tree/master/ubuntu
+[efaille/alpine]://github.com/efaille/dockerfiles/tree/master/alpine

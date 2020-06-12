@@ -1,7 +1,7 @@
 # Node
 
 ### Dependencie
-* [efaille/ubuntu]
+* [efaille/alpine]
 
 ### Usage
 ```
@@ -13,4 +13,4 @@ $ docker run -v $PWD:/data efaille/node node helloworld.js
 ```
 $ docker run -it -v $PWD:/data efaille/node npm install
 ```
-[efaille/ubuntu]://github.com/efaille/dockerfiles/tree/master/ubuntu
+[efaille/alpine]://github.com/efaille/dockerfiles/tree/master/alpine
