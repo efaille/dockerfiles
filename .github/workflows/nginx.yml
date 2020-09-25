@@ -16,6 +16,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.CR_PAT }}
           registry: ghcr.io
-          path: alpine 
+          path: nginx
           repository: efaille/nginx
           tag_with_ref: true
