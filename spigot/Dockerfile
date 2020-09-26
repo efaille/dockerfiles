@@ -1,4 +1,4 @@
-FROM efaille/java
+FROM ghcr.io/efaille/java
 
 COPY init.sh start.sh /
 RUN chmod +x /init.sh /start.sh

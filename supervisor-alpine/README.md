@@ -1,10 +1,13 @@
 # Supervisor
 
 ### Dependencie
-* [efaille/alpine]
+
+- [efaille/alpine]
 
 ### Usage
+
 ```
-$ docker run efaille/supervisor supervisord -version
+$ docker run ghcr.io/efaille/supervisor supervisord -version
 ```
-[efaille/alpine]://github.com/efaille/dockerfiles/tree/master/alpine
+
+[efaille/alpine]: //github.com/efaille/dockerfiles/tree/master/alpine

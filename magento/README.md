@@ -1,10 +1,13 @@
 # Magento
 
 ### Dependencie
-* [efaille/nginx-php]
+
+- [efaille/nginx-php]
 
 ### Usage
+
 ```
-$ docker run --link some-mysql:mysql -d -p 80 -v $PWD:/var/www efaille/magento
+$ docker run --link some-mysql:mysql -d -p 80 -v $PWD:/var/www ghcr.io/efaille/magento
 ```
-[efaille/nginx-php]://github.com/efaille/dockerfiles/tree/master/nginx-php
+
+[efaille/nginx-php]: //github.com/efaille/dockerfiles/tree/master/nginx-php

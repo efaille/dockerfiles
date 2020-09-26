@@ -1,10 +1,13 @@
 # Spigot
 
 ### Dependencie
-* [efaille/java]
+
+- [efaille/java]
 
 ### Usage
+
 ```
-$ docker run -d -p 25565 efaille/spigot
+$ docker run -d -p 25565 ghcr.io/efaille/spigot
 ```
-[efaille/java]://github.com/efaille/dockerfiles/tree/master/java
+
+[efaille/java]: //github.com/efaille/dockerfiles/tree/master/java

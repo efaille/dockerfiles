@@ -1,4 +1,4 @@
-FROM efaille/ubuntu
+FROM ghcr.io/efaille/ubuntu
 MAINTAINER Erick Faille "efaille@gmail.com"
 
 # Update & Install & Clean

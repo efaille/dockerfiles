@@ -1,4 +1,4 @@
-FROM efaille/nginx-php-alpine
+FROM ghcr.io/efaille/nginx-php-alpine
 
 RUN apk add --no-cache tzdata php7-curl php7-dom php7-exif php7-fileinfo php7-gd php7-iconv php7-json php7-mbstring php7-mysqli php7-pecl-imagick php7-zip
 

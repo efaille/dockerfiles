@@ -1,4 +1,4 @@
-FROM efaille/ubuntu
+FROM ghcr.io/efaille/ubuntu
 
 RUN apt-get update && \
     apt-get install -y mongodb && \

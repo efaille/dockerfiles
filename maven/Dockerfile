@@ -1,4 +1,4 @@
-FROM efaille/java
+FROM ghcr.io/efaille/java
 
 RUN apk add --no-cache maven
 

@@ -1,4 +1,4 @@
-FROM efaille/supervisor-alpine
+FROM ghcr.io/efaille/supervisor-alpine
 
 RUN apk add --no-cache nginx php7 php7-fpm && \
     mkdir -p /run/nginx

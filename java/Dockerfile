@@ -1,4 +1,4 @@
-FROM efaille/alpine
+FROM ghcr.io/efaille/alpine
 
 RUN apk add --no-cache openjdk8
 

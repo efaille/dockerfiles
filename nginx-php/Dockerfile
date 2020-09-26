@@ -1,4 +1,4 @@
-FROM efaille/supervisor
+FROM ghcr.io/efaille/supervisor
 MAINTAINER Erick Faille "efaille@gmail.com"
 
 # Update & Install & Clean

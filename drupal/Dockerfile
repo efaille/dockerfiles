@@ -1,4 +1,4 @@
-FROM efaille/nginx-php
+FROM ghcr.io/efaille/nginx-php
 MAINTAINER Erick Faille "efaille@gmail.com"
 
 # Update & Install & Clean
