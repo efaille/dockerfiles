@@ -1,0 +1,21 @@
+name: supervisor-alpine ci
+
+on:
+  workflow_dispatch:
+  push:
+    branches: master
+    paths: 'supervisor-alpine/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.CR_PAT }}
+          registry: ghcr.io
+          path: supervisor-alpine
+          repository: efaille/supervisor-alpine
+          tag_with_ref: true
