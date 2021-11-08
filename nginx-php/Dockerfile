@@ -1,5 +1,4 @@
 FROM ghcr.io/efaille/supervisor
-MAINTAINER Erick Faille "efaille@gmail.com"
 
 # Update & Install & Clean
 RUN add-apt-repository -y ppa:nginx/stable && add-apt-repository -y ppa:ondrej/php && apt-get update && \
