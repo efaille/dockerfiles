@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     apt-get install -y locales tzdata software-properties-common nano wget curl git jq && \
