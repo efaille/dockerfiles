@@ -10,4 +10,4 @@ RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && dpkg-reconfigu
 
 WORKDIR /data
 
-CMD ["cat", "/etc/lsb-release"]
+CMD lsb_release -a
