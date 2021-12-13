@@ -1,0 +1,21 @@
+name: steamcmd ci
+
+on:
+  workflow_dispatch:
+  push:
+    branches: master
+    paths: 'steamcmd/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.CR_PAT }}
+          registry: ghcr.io
+          path: steamcmd
+          repository: efaille/steamcmd
+          tag_with_ref: true
