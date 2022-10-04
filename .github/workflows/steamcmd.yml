@@ -5,17 +5,17 @@ on:
   push:
     branches: master
     paths: 'steamcmd/**'
+  # monthly update
+  schedule:
+    - cron: 0 0 1 * *
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: docker/build-push-action@v1
+      - uses: efaille/actions/docker-base-image-ci@master
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.CR_PAT }}
-          registry: ghcr.io
-          path: steamcmd
-          repository: efaille/steamcmd
-          tag_with_ref: true
+          context: steamcmd
+          tag: efaille/steamcmd:latest
