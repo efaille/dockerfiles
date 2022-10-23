@@ -1,0 +1,21 @@
+name: satisfactory-server ci
+
+on:
+  workflow_dispatch:
+  push:
+    branches: master
+    paths: 'satisfactory-server/**'
+  # monthly update
+  schedule:
+    - cron: 0 0 1 * *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: efaille/actions/docker-base-image-ci@master
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.CR_PAT }}
+          context: satisfactory-server
+          tag: efaille/satisfactory-server:latest
