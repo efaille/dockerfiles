@@ -20,4 +20,5 @@ jobs:
           context: alpine
           tag: efaille/alpine:latest
   trigger-java-ci-workflow:
-    uses: .github/workflows/java.yml@master
+    uses: efaille/dockerfiles/.github/workflows/java.yml@master
+    secrets: inherit
