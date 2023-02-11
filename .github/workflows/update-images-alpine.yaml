@@ -1,0 +1,55 @@
+name: update images alpine workflow
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 1 * *
+
+jobs:
+  alpine:
+    uses: efaille/dockerfiles/.github/workflows/alpine.yml@master
+    secrets: inherit
+  java:
+    needs: alpine
+    uses: efaille/dockerfiles/.github/workflows/java.yml@master
+    secrets: inherit
+  node:
+    needs: alpine
+    uses: efaille/dockerfiles/.github/workflows/node.yml@master
+    secrets: inherit
+  golang:
+    needs: alpine
+    uses: efaille/dockerfiles/.github/workflows/golang.yml@master
+    secrets: inherit
+  nginx:
+    needs: alpine
+    uses: efaille/dockerfiles/.github/workflows/nginx.yml@master
+    secrets: inherit
+  mysql:
+    needs: alpine
+    uses: efaille/dockerfiles/.github/workflows/mysql.yml@master
+    secrets: inherit
+  supervisor-alpine:
+    needs: alpine
+    uses: efaille/dockerfiles/.github/workflows/supervisor-alpine.yml@master
+    secrets: inherit
+  maven:
+    needs: java
+    uses: efaille/dockerfiles/.github/workflows/maven.yml@master
+    secrets: inherit
+  minecraft:
+    needs: java
+    uses: efaille/dockerfiles/.github/workflows/minecraft.yml@master
+    secrets: inherit
+  spigot:
+    needs: java
+    uses: efaille/dockerfiles/.github/workflows/spigot.yml@master
+    secrets: inherit
+  nginx-php-alpine:
+    needs: supervisor-alpine
+    uses: efaille/dockerfiles/.github/workflows/nginx-php-alpine.yml@master
+    secrets: inherit
+  wordpress-alpine:
+    needs: nginx-php-alpine
+    uses: efaille/dockerfiles/.github/workflows/wordpress-alpine.yml@master
+    secrets: inherit
