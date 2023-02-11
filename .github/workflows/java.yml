@@ -2,6 +2,7 @@ name: java ci
 
 on:
   workflow_dispatch:
+  workflow_call:
   push:
     branches: master
     paths: 'java/**'
