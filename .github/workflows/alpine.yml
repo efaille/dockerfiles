@@ -19,6 +19,21 @@ jobs:
           password: ${{ secrets.CR_PAT }}
           context: alpine
           tag: efaille/alpine:latest
-  trigger-java-ci-workflow:
+  java-ci:
     uses: efaille/dockerfiles/.github/workflows/java.yml@master
+    secrets: inherit
+  node-ci:
+    uses: efaille/dockerfiles/.github/workflows/node.yml@master
+    secrets: inherit
+  golang-ci:
+    uses: efaille/dockerfiles/.github/workflows/golang.yml@master
+    secrets: inherit
+  nginx-ci:
+    uses: efaille/dockerfiles/.github/workflows/nginx.yml@master
+    secrets: inherit
+  mysql-ci:
+    uses: efaille/dockerfiles/.github/workflows/mysql.yml@master
+    secrets: inherit
+  supervisor-alpine-ci:
+    uses: efaille/dockerfiles/.github/workflows/supervisor-alpine.yml@master
     secrets: inherit

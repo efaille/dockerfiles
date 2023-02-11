@@ -2,12 +2,10 @@ name: mysql ci
 
 on:
   workflow_dispatch:
+  workflow_call:
   push:
     branches: master
     paths: 'mysql/**'
-  # monthly update
-  schedule:
-    - cron: 0 0 1 * *
 
 jobs:
   build:
