@@ -19,3 +19,5 @@ jobs:
           password: ${{ secrets.CR_PAT }}
           context: alpine
           tag: efaille/alpine:latest
+  trigger-java-ci-workflow:
+    uses: efaille/dockerfiles/.github/workflows/java.yml@master
