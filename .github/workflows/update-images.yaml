@@ -9,6 +9,9 @@ jobs:
   alpine:
     uses: efaille/dockerfiles/.github/workflows/alpine.yml@master
     secrets: inherit
+  ubuntu:
+    uses: efaille/dockerfiles/.github/workflows/ubuntu.yml@master
+    secrets: inherit
   java:
     needs: alpine
     uses: efaille/dockerfiles/.github/workflows/java.yml@master
@@ -32,4 +35,28 @@ jobs:
   supervisor-alpine:
     needs: alpine
     uses: efaille/dockerfiles/.github/workflows/supervisor-alpine.yml@master
+    secrets: inherit
+  mongodb:
+    needs: ubuntu
+    uses: efaille/dockerfiles/.github/workflows/mongodb.yml@master
+    secrets: inherit
+  supervisor:
+    needs: ubuntu
+    uses: efaille/dockerfiles/.github/workflows/supervisor.yml@master
+    secrets: inherit
+  steamcmd:
+    needs: ubuntu
+    uses: efaille/dockerfiles/.github/workflows/steamcmd.yml@master
+    secrets: inherit
+  maven:
+    needs: java
+    uses: efaille/dockerfiles/.github/workflows/maven.yml@master
+    secrets: inherit
+  minecraft:
+    needs: java
+    uses: efaille/dockerfiles/.github/workflows/minecraft.yml@master
+    secrets: inherit
+  spigot:
+    needs: java
+    uses: efaille/dockerfiles/.github/workflows/spigot.yml@master
     secrets: inherit

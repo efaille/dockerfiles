@@ -6,9 +6,6 @@ on:
   push:
     branches: master
     paths: 'supervisor-alpine/**'
-  # monthly update
-  schedule:
-    - cron: 0 0 1 * *
 
 jobs:
   build:
