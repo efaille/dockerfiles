@@ -1,4 +1,4 @@
-name: update images alpine workflow
+name: update Alpine images workflow
 
 on:
   workflow_dispatch:
