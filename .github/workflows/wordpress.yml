@@ -2,15 +2,13 @@ name: wordpress ci
 
 on:
   workflow_dispatch:
+  workflow_call:
   push:
     branches: master
     paths: 'wordpress/**'
-  # monthly update
-  schedule:
-    - cron: 0 0 1 * *
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - uses: efaille/actions/docker-base-image-ci@master

@@ -60,3 +60,31 @@ jobs:
     needs: java
     uses: efaille/dockerfiles/.github/workflows/spigot.yml@master
     secrets: inherit
+  nginx-php:
+    needs: supervisor
+    uses: efaille/dockerfiles/.github/workflows/nginx-php.yml@master
+    secrets: inherit
+  nginx-php-alpine:
+    needs: supervisor-alpine
+    uses: efaille/dockerfiles/.github/workflows/nginx-php-alpine.yml@master
+    secrets: inherit
+  wordpress:
+    needs: nginx-php
+    uses: efaille/dockerfiles/.github/workflows/wordpress.yml@master
+    secrets: inherit
+  wordpress-alpine:
+    needs: nginx-php-alpine
+    uses: efaille/dockerfiles/.github/workflows/wordpress-alpine.yml@master
+    secrets: inherit
+  magento:
+    needs: nginx-php
+    uses: efaille/dockerfiles/.github/workflows/magento.yml@master
+    secrets: inherit
+  drupal:
+    needs: nginx-php
+    uses: efaille/dockerfiles/.github/workflows/drupal.yml@master
+    secrets: inherit
+  satisfactory-server:
+    needs: steamcmd
+    uses: efaille/dockerfiles/.github/workflows/satisfactory-server.yml@master
+    secrets: inherit

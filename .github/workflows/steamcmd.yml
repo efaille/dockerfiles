@@ -8,7 +8,7 @@ on:
     paths: 'steamcmd/**'
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - uses: efaille/actions/docker-base-image-ci@master
