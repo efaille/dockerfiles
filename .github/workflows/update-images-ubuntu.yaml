@@ -1,0 +1,43 @@
+name: update images ubuntu workflow
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 1 * *
+
+jobs:
+  ubuntu:
+    uses: efaille/dockerfiles/.github/workflows/ubuntu.yml@master
+    secrets: inherit
+  mongodb:
+    needs: ubuntu
+    uses: efaille/dockerfiles/.github/workflows/mongodb.yml@master
+    secrets: inherit
+  supervisor:
+    needs: ubuntu
+    uses: efaille/dockerfiles/.github/workflows/supervisor.yml@master
+    secrets: inherit
+  steamcmd:
+    needs: ubuntu
+    uses: efaille/dockerfiles/.github/workflows/steamcmd.yml@master
+    secrets: inherit
+  nginx-php:
+    needs: supervisor
+    uses: efaille/dockerfiles/.github/workflows/nginx-php.yml@master
+    secrets: inherit
+  wordpress:
+    needs: nginx-php
+    uses: efaille/dockerfiles/.github/workflows/wordpress.yml@master
+    secrets: inherit
+  magento:
+    needs: nginx-php
+    uses: efaille/dockerfiles/.github/workflows/magento.yml@master
+    secrets: inherit
+  drupal:
+    needs: nginx-php
+    uses: efaille/dockerfiles/.github/workflows/drupal.yml@master
+    secrets: inherit
+  satisfactory-server:
+    needs: steamcmd
+    uses: efaille/dockerfiles/.github/workflows/satisfactory-server.yml@master
+    secrets: inherit
