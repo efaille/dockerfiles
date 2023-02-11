@@ -1,4 +1,4 @@
-name: update images ubuntu workflow
+name: update Ubuntu images workflow
 
 on:
   workflow_dispatch:
