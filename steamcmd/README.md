@@ -7,7 +7,7 @@
 ### Usage
 
 ```
-$ docker run -it ghcr.io/efaille/steamcmd +login anonymous
+docker run -it ghcr.io/efaille/steamcmd +login anonymous
 ```
 
 [efaille/ubuntu]: //github.com/efaille/dockerfiles/tree/master/ubuntu
