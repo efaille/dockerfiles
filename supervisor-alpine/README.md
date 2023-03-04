@@ -1,4 +1,4 @@
-# Supervisor
+# Supervisor on Alpine Linux
 
 ### Dependencie
 
@@ -7,7 +7,7 @@
 ### Usage
 
 ```
-docker run ghcr.io/efaille/supervisor supervisord -version
+docker run ghcr.io/efaille/supervisor-alpine supervisord -version
 ```
 
 [efaille/alpine]: //github.com/efaille/dockerfiles/tree/master/alpine

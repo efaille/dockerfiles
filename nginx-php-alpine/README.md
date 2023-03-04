@@ -1,4 +1,4 @@
-# Nginx + PHP config
+# Nginx and PHP on Alpine Linux
 
 ### Dependencie
 
