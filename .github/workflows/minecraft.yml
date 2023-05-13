@@ -14,6 +14,6 @@ jobs:
       - uses: efaille/actions/docker-base-image-ci@master
         with:
           username: ${{ github.actor }}
-          password: ${{ secrets.CR_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           context: minecraft
           tag: efaille/minecraft:latest
