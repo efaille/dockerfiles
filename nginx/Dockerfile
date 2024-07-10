@@ -1,10 +1,9 @@
 FROM ghcr.io/efaille/alpine
 
-RUN apk add --no-cache nginx && \
-    mkdir -p /run/nginx
+RUN apk add --no-cache nginx
 
-ADD default.conf /etc/nginx/conf.d/default.conf
+ADD ./default.conf /etc/nginx/http.d/
 
 EXPOSE 80 443
 
-CMD nginx -g "daemon off;"
+CMD ["nginx", "-g", "daemon off;"]
