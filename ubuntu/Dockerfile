@@ -1,9 +1,9 @@
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
-ENV TZ America/New_York
-ENV LANG en_CA.UTF-8
-ENV LANGUAGE en_CA:en
-ENV LC_ALL en_CA.UTF-8
+ENV TZ=America/New_York
+ENV LANG=en_CA.UTF-8
+ENV LANGUAGE=en_CA:en
+ENV LC_ALL=en_CA.UTF-8
 
 WORKDIR /data
 
